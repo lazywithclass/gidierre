@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export default function FogOfWarMaster({ imageSrc, onChange, pcs }) {
 
@@ -58,7 +58,6 @@ export default function FogOfWarMaster({ imageSrc, onChange, pcs }) {
 
   const handleMouseUp = (event) => {
     const canvas = canvasRef.current;
-    const rect = canvas.getBoundingClientRect();
     canvas.removeEventListener('mousemove', handleMouseMove);
     const ctx = canvas.getContext('2d');
     ctx.beginPath()
@@ -88,7 +87,7 @@ export default function FogOfWarMaster({ imageSrc, onChange, pcs }) {
 
   return (
     <div className="image-container">
-      <img ref={imgRef} src={imageSrc} />
+      <img ref={imgRef} src={imageSrc} alt="map" />
       <canvas
         ref={canvasPCsRef}
         className="pcs-canvas"

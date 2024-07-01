@@ -2,7 +2,6 @@ import React, { useState, useRef, useEffect } from 'react';
 import { Peer } from 'peerjs'
 
 import FogOfWarSlave from './FogOfWarSlave'
-import ChooseName from './ChooseName'
 
 
 export default function PeerSlave() {

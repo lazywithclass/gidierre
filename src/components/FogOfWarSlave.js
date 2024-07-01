@@ -1,4 +1,4 @@
-import React, { useRef, useState, useEffect } from 'react';
+import React, { useRef, useEffect } from 'react';
 
 export default function FogOfWarSlave({ imageSrc, coord, self, pcName, pcs, newPCPosition }) {
   const canvasRef = useRef(null);
@@ -26,7 +26,6 @@ export default function FogOfWarSlave({ imageSrc, coord, self, pcName, pcs, newP
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext('2d');
-    const rect = canvas.getBoundingClientRect();
 
     const scaleX = canvas.width / coord.vw
     const scaleY = canvas.height / coord.vh
@@ -80,7 +79,7 @@ export default function FogOfWarSlave({ imageSrc, coord, self, pcName, pcs, newP
 
   return (
     <div className="image-container">
-      <img ref={imgRef} src={imageSrc} />
+      <img ref={imgRef} src={imageSrc} alt="map" />
       <canvas
         ref={canvasRef}
         className="fog-canvas"
